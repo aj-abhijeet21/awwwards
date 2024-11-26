@@ -4,6 +4,7 @@ import { TiLocationArrow } from "react-icons/ti";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import VideoPreview from "./VideoPreview";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -83,23 +84,25 @@ const Hero = () => {
       >
         <div>
           <div className="mask-clip-path absolute absolute-center z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
-            <div
-              onClick={handleMiniVidClick}
-              className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
-            >
-              <video
-                ref={nextVideoRef}
-                src={getVideoSource(upcomingVideoIndex)}
-                loop
-                muted
-                id="current-video"
-                className="size-64 origin-center scale-150 object-cover object-center"
-                onLoadedData={handleVideoLoad}
-                onError={(e) =>
-                  console.error(`Error loading video: ${e.currentTarget.src}`)
-                } // Error handling
-              />
-            </div>
+            <VideoPreview>
+              <div
+                onClick={handleMiniVidClick}
+                className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
+              >
+                <video
+                  ref={nextVideoRef}
+                  src={getVideoSource(upcomingVideoIndex)}
+                  loop
+                  muted
+                  id="current-video"
+                  className="size-64 origin-center scale-150 object-cover object-center"
+                  onLoadedData={handleVideoLoad}
+                  onError={(e) =>
+                    console.error(`Error loading video: ${e.currentTarget.src}`)
+                  } // Error handling
+                />
+              </div>
+            </VideoPreview>
           </div>
 
           <video
