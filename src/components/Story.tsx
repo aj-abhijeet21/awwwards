@@ -7,7 +7,7 @@ import Button from "./Button";
 const Story = () => {
   const frameRef = useRef<HTMLImageElement | null>(null);
 
-  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseLeave = (_: React.MouseEvent<HTMLDivElement>) => {
     const element = frameRef.current;
 
     gsap.to(element, {
@@ -38,8 +38,6 @@ const Story = () => {
       ease: "power1.inOut",
     });
   };
-  const handleMouseUp = (e: React.MouseEvent<HTMLDivElement>) => {};
-  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {};
 
   return (
     <section id="story" className="min-h-dvh w-screen bg-black text-blue-50">
@@ -62,10 +60,10 @@ const Story = () => {
                   alt="etrance"
                   ref={frameRef}
                   className="object-contain"
-                  onMouseLeave={handleMouseLeave}
-                  onMouseUp={handleMouseUp}
-                  onMouseEnter={handleMouseEnter}
                   onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
+                  onMouseUp={handleMouseLeave}
+                  onMouseEnter={handleMouseLeave}
                 />
               </div>
             </div>

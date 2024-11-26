@@ -78,12 +78,7 @@ export const BentoTilt = ({ children, className }: BentoTiltProps) => {
   );
 };
 
-const BentoCard = ({
-  description,
-  src,
-  title,
-  isComingSoon = false,
-}: BentoCardProps) => {
+const BentoCard = ({ description, src, title }: BentoCardProps) => {
   return (
     <div className="relative size-full">
       <video

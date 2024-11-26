@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [hasClicked, setHasClicked] = useState(false);
-  const [loadedVideos, setLoadedVideos] = useState(0);
+  const [_, setLoadedVideos] = useState(0);
 
   useGSAP(
     () => {
