@@ -17,7 +17,6 @@ const Story = () => {
       ease: "power1.inOut",
     });
   };
-
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const { clientX, clientY } = e;
     const element = frameRef.current;
